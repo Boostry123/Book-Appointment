@@ -1,6 +1,6 @@
 # Book-Appointment
 
-Booking to an appointment with a working database and a user/admin frielndly UI
+Booking an appointment with a working database and a user/admin frielndly UI
 
 language used : JavaScript , EJS
 
