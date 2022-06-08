@@ -23,7 +23,7 @@ this will be the normal user page:
 
 ![image](https://user-images.githubusercontent.com/100792995/172582941-f5af89c9-6954-4c4f-bd64-b919924794a3.png)
 
-The user can make an appointment and he can also view it on his mamin page and remove it
+The user can make an appointment and he can also view it on his main page and remove it
 
 ---------------------
 
