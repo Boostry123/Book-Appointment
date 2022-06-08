@@ -1,0 +1,65 @@
+<%- include("header") -%>
+
+
+
+    <section id="navbar">
+        <div class="nav">
+            <h6><%= username %></h6>
+        </div>
+        <div class="appointments">
+            <h2>Appointments</h2>
+          <%  if(userAppoint !== "No user"){ %>
+                <form action="/removeAppointment" method="post">
+                    <p>name: <%= userAppoint.name %></p>
+                    <p>date: <%= userAppoint.date %></p>
+                    <p>time: <%= userAppoint.time %></p>
+                    <button class="submit userAppointmentRemove" type="submit">Remove Appointment</button>
+                </form>
+                <%= Note %>
+           <% }else{ %>
+                <p>No appointments</p>
+           <% } %>
+            
+        </div>
+
+    </section>
+
+    <section id="main">
+
+        <div class="main">
+            <h1>Appointment</h1>
+            <form action="/user" method="POST">
+                <div>
+                    <label class="field" for="name">Name:</label>
+                    <input id="name" type="text" name="name" autocomplete="off" autofocus>
+                </div>
+                <br>
+                <div>
+                    <label class="field" for="phoneNumber">Phone number:</label>
+                    <input id="phoneNumber" type="text" name="phone" autocomplete="off">
+                </div>
+
+                <div>
+                    <button class="submit userNextButton" type="submit">➜</button>
+                </div>
+        </div>
+            </form>
+    </section>
+
+    <section id="bottom">
+        <div class="logout">
+            <a href="/logout" role="button" class="logout">Logout</a>
+        </div>
+        
+    </section>
+<br>
+    <section id="footer">
+        copyright yanir.laty 2022 ©
+    </section>
+
+
+
+
+
+
+<%- include("footer") -%>

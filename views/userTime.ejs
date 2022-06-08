@@ -1,0 +1,51 @@
+<%- include("header") -%>
+
+
+<form action="/userTime" method="post">
+    <section id="navbar">
+        <div class="nav">
+            <%= username %>
+        </div>
+        
+    </section>
+
+<section id="main">
+    <div class="main">
+        
+        <div>
+            <label class="field" for="time">Time:</label>
+                
+                <% times.forEach((time)=>{ %>
+                    <div class="timesBox">
+                        <form action="/userTime" method="post">
+                            <button type="submit" name="chosenTime" value="<%= time %>"><%= time %></button>
+                        </form>
+                    </div>
+                <% }) %>
+            </datalist>
+        </div>
+        
+        <div>
+            <a href="/userDate">back</a>
+        </div>
+    </div>
+</form>
+</section>
+
+<section id="bottom">
+    <div class="logout">
+        <a href="/logout" role="button" class="logout">logout</a>
+    </div>
+    
+</section>
+
+<section id="footer">
+ copyright yanir.laty 2022  ©
+</section>
+
+
+
+
+
+
+<%- include("footer") -%>

@@ -1,0 +1,29 @@
+<%- include("header") -%>
+
+
+<h1>Admin panel</h1>
+<div>
+    <h2>appointments</h2>
+    <% foundAppoint.forEach((appoint)=>{ %>
+        <% const user = appoint.user %>
+        <form action="/removeAppointment" method="post">
+            <div class="adminAppoint">
+                <p>name:<%= appoint.name %></p>
+                <p>phone:<%= appoint.phone %></p>
+                <p>date:<%= appoint.date %></p>
+                <p>time:<%= appoint.time %></p>
+                <button type="submit" name="appointUser" value="<%= appoint.user %>">Remove appointment</button>
+            </div>
+        </form>
+    <% }) %>
+    
+</div>
+<div class="logout">
+    <a href="/logout" role="button" class="logout">logout</a>
+</div>
+
+
+
+
+
+<%- include("footer") -%>

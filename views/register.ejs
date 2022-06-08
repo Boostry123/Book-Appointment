@@ -1,0 +1,25 @@
+<%- include("header") -%>
+
+<div class="registerBox">
+    <i class="fa-solid fa-unlock-keyhole fa-main"></i>
+    <h2>Register</h2>
+    <%= errors %>
+    <form action="/register" method="post">
+        <div>
+            <label for="email">Username</label>
+            <input type="email" placeholder="Email" name="username">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+        <br>
+        <button class="button userNextButton" type="submit">➜</button>
+    </form>
+    <a href="/login">Login</a>
+</div>
+
+
+
+<%- include("footer") -%>

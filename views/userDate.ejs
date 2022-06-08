@@ -1,0 +1,48 @@
+<%- include("header") -%>
+
+
+
+    <section id="navbar">
+        <div class="nav">
+            <%= username %>
+        </div>
+
+    </section>
+
+    <section id="main">
+        <div class="main">
+            <form action="/userDate" method="post">
+                <div>
+                    <label class="field" for="day">Day:</label>
+                    <input list="days" id="day" name="chosenDay">
+                    <datalist id="days">
+                        <% days.forEach((day)=>{ %>
+                            <option value="<%= day %>">
+                                <% }) %>
+                    </datalist>
+                </div>
+
+                <div>
+                    <button class="submit userNextButton" type="submit">➜</button>
+                </div>
+        </div>
+        </form>
+    </section>
+
+    <section id="bottom">
+        <div class="logout">
+            <a href="/logout" role="button" class="logout">logout</a>
+        </div>
+        
+    </section>
+
+    <section id="footer">
+        copyright yanir.laty 2022 ©
+    </section>
+
+
+
+
+
+
+    <%- include("footer") -%>
