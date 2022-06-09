@@ -1,6 +1,6 @@
 # Book-Appointment
 
-<h1>Latest Updates: 1)Admins can now create custom appointments at any given day or time.</h1>
+<p style="color:red">Latest Updates: 1)Admins can now create custom appointments at any given day or time.</p>
 
 Booking an appointment with a working database and a user/admin frielndly UI
 
@@ -16,12 +16,12 @@ Version of the project : v1.0.1
 
 the user system have been made using the passport library with high level of encrypt to passwords including hashing and salting
 
-main page:
+<h3>main page:</h3>
 
 ![image](https://user-images.githubusercontent.com/100792995/172582626-292bd8a9-ad5f-40c2-9772-9d284da36f75.png)
 ---------------------
 
-this will be the normal user page:
+<h3>this will be the normal user page:</h3>
 
 ![image](https://user-images.githubusercontent.com/100792995/172582941-f5af89c9-6954-4c4f-bd64-b919924794a3.png)
 
@@ -29,7 +29,7 @@ The user can make an appointment and he can also view it on his main page and re
 
 ---------------------
 
-this is the admin platform :
+<h3>this is the admin platform :</h3>
 note: the level of the user or admin is set manually by the developer in the database
 
 ![image](https://user-images.githubusercontent.com/100792995/172583556-3a53d1b3-bb68-42cf-ab66-3415a1e7f112.png)
