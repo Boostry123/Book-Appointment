@@ -35,10 +35,11 @@ The user can make an appointment and he can also view it on his main page and re
 <h3>this is the admin platform :</h3>
 note: the level of the user or admin is set manually by the developer in the database
 
-![image](https://user-images.githubusercontent.com/100792995/172583556-3a53d1b3-bb68-42cf-ab66-3415a1e7f112.png)
+![image](https://user-images.githubusercontent.com/100792995/172874605-c45b34dd-c8ce-4966-bf23-17a6379a5a1f.png)
 
 Important things that the code knows how to do: 
 1. when a user chooses a day and time of the appointment these dates wont show to another user trying to book.
 2. a user cannot book more than 1 appointment he must delete the previous one to commit a new one.
 3. admin platform is only to a user who is set to be an admin by the developer.
+4. admin has the power to set a custome appointment at any given day or time (even if its taken)
 
