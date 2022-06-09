@@ -2,6 +2,7 @@
 
 <i>Latest Updates: 
 1)Admins can now create custom appointments at any given day or time.
+  
 2)Mobile interaction fixes in admin panel
 </i>
 
