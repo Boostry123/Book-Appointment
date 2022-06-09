@@ -1,5 +1,7 @@
 # Book-Appointment
 
+Latest Updates: 1)Admins can now create custom appointments at any given day or time.
+
 Booking an appointment with a working database and a user/admin frielndly UI
 
 language used : JavaScript , EJS
@@ -10,7 +12,7 @@ database: MongoDB , noSQL
 
 using libraries : mongoose , express , passport, dotenv etc...
 
-Version of the project : v1
+Version of the project : v1.0.1
 
 the user system have been made using the passport library with high level of encrypt to passwords including hashing and salting
 
