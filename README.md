@@ -1,6 +1,6 @@
 # Book-Appointment
 
-Latest Updates: 1)Admins can now create custom appointments at any given day or time.
+<h1>Latest Updates: 1)Admins can now create custom appointments at any given day or time.</h1>
 
 Booking an appointment with a working database and a user/admin frielndly UI
 
