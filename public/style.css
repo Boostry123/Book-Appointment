@@ -21,6 +21,10 @@ button{
 a{
     text-decoration: none;
 }
+select{
+    min-width: 300px;
+    min-height: 50px;
+}
 
 
 .nav{
@@ -41,7 +45,6 @@ a{
     margin-left: 50%;
     transform: translate(-50%);
     margin-top: 10%;
-
 }
 
 .mainTitle{
@@ -153,6 +156,28 @@ a:visited{
 
 /* admin page */
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(125, 255, 238);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    min-width: 1200px;
+    border-radius: 5px;
+
+  }
+
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
 .adminAppoint{
     background-color: rgba(255, 255, 255, 0.205);
     padding: 10px;
@@ -160,6 +185,18 @@ a:visited{
     border: 1px solid black;
     margin-bottom: 5px;
 }
+
+.checkbox{
+    display: inline-block;
+}
+/* Admin page media */
+
+@media (max-width:600px){
+    .dropdown-content {
+        min-width: 400px;
+    }
+}
+
 
 /* bottom section */
 

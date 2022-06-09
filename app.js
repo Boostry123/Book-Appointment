@@ -33,12 +33,16 @@ app.use(passport.session());
 
 mongoose.connect('mongodb://localhost:27017/lineDB');
 
+//schema for creating the user
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
+  name: String,
+  phone: String,
   level: String
 });
 
+//schema for creating the appointment
 const appointmentSchema = new mongoose.Schema({
   user: String,
   name: String,
@@ -47,8 +51,10 @@ const appointmentSchema = new mongoose.Schema({
   time: String
 });
 
+//puts the user schema into the passport library so it can use it to create the user
 userSchema.plugin(passportLocalMongoose);
 
+//user and appointment models based on the schema saves the info in JSON into mongoDB / creates the database in mongoDB
 const User = new mongoose.model("User", userSchema);
 const Appoint = new mongoose.model("Appoint", appointmentSchema);
 
@@ -56,7 +62,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
+//all the get routes for rendering and cheking if the user is authenticated
 app.get("/", (req, res) => {
   res.render("main")
 });
@@ -76,10 +82,10 @@ app.get("/user", (req, res) => {
       Appoint.find({user: req.user.username}, (err,foundUser)=>{
         if(!err){
           if(foundUser.length >0){
-            res.render("user", { username: req.user.username , userAppoint: foundUser[0], Note:"Cant have more than 1 appointment"})
-            console.log(foundUser)
+            res.render("user", { username: req.user.username , userAppoint: foundUser[0], Note:"Cant have more than 1 appointment",name:req.user.name, phone:req.user.phone})
           }else{
-            res.render("user", {username: req.user.username , userAppoint: "No user"})
+            console.log(req.user.name)
+            res.render("user", {username: req.user.username , userAppoint: "No user",name:req.user.name, phone:req.user.phone})
           }
           
         }else{
@@ -104,7 +110,14 @@ app.get("/admin", (req,res) =>{
     if(req.user.level == "admin"){
       Appoint.find((err,foundAppoint)=>{
         if(!err){
-          res.render("admin",{foundAppoint: foundAppoint})
+          const getTimes = dayAndTime.chosenTime()
+          const getDates = dayAndTime.customeDay()
+          User.find({},(err,found)=>{
+            if(!err){
+              res.render("admin",{foundAppoint: foundAppoint, times: getTimes, dates: getDates, users: found})
+            } 
+          })
+          
         }else{
           console.log(err)
         }
@@ -200,7 +213,7 @@ app.post("/register", (req, res) => {
     req.flash("error", "password is too short (less than 6 digits)")
     res.redirect("/register")
   } else {
-    User.register({ username: username, level: "user" }, password, (err) => {
+    User.register({ username: username, level: "user",phone:req.body.phone, name:req.body.name }, password, (err) => {
       if (err) {
         req.flash("error", err["message"])
         res.redirect("/register")
@@ -284,6 +297,18 @@ app.post("/removeAppointment", (req,res)=>{
     })
   }
   
+})
+
+app.post("/createAppointAdmin",(req,res)=>{
+  const appoint = new Appoint({
+    user: req.body.username,
+    name: req.body.username,
+    phone:req.body.phone,
+    date: req.body.date,
+    time: req.body.time
+  })
+  appoint.save()
+  res.redirect("/admin")
 })
 
 
